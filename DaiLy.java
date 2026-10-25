@@ -1,14 +1,14 @@
-public class Daily extends Nguoi {
-    private String loaiDaily;
+public class DaiLy extends Nguoi {
+    private String loaiDaiLy;
     private Double duNo;
-    public Daily() {
+    public DaiLy() {
         super(); 
-        this.loaiDaily = "";
+        this.loaiDaiLy = "";
         this.duNo = 0.0;
     }
-    public Daily(boolean status, String maSo, String hoTen, String soDienThoai, String loaiDaily, Double duNo) {
+    public DaiLy(boolean status, String maSo, String hoTen, String soDienThoai, String loaiDaiLy, Double duNo) {
         super(status, maSo, hoTen, soDienThoai);
-        this.loaiDaily = loaiDaily;
+        this.loaiDaiLy = loaiDaiLy;
         this.duNo = duNo;
     }
       /**
@@ -31,14 +31,14 @@ public class Daily extends Nguoi {
     @Override
     public void hienThiThongTin() {
         System.out.println(" | Trạng thái: " + (status ? "Còn hoạt động" : "Đã xóa")
-                + " |[Đại lý] Mã số: " + maSo + " | Họ tên: " + hoTen
-                + " | SĐT: " + soDienThoai + " | Loại đại lý: " + loaiDaily + " | Dư nợ: " + duNo);
+                + " |[Đại Lý] Mã số: " + maSo + " | Họ tên: " + hoTen
+                + " | SĐT: " + soDienThoai + " | Loại đại lý: " + loaiDaiLy + " | Dư nợ: " + duNo);
     }
-    public String getLoaiDaily() {
-        return loaiDaily;
+    public String getLoaiDaiLy() {
+        return loaiDaiLy;
     }
-    public void setLoaiDaily(String loaiDaily) {
-        this.loaiDaily = loaiDaily;
+    public void setLoaiDaiLy(String loaiDaiLy) {
+        this.loaiDaiLy = loaiDaiLy;
     }
     public Double getDuNo() {
         return duNo;
