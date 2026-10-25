@@ -153,7 +153,7 @@ public class QuanLyVe {
         for(int i=0;i<soLuong;i++){
             ChuyenBay chuyenBay=danhSach[i].getChuyenBay();
             if(chuyenBay!=null){
-                String maCuaChuyen=chuyenBay.getMaChuyenBay();
+                String maCuaChuyen=chuyenBay.getSoHieuChuyenBay();
                 if(maCuaChuyen!=null&&maCuaChuyen.equalsIgnoreCase(maCanDem)){
                     dem++;
                 }
@@ -169,7 +169,7 @@ public class QuanLyVe {
             if(daHuy[i]) continue;
             ChuyenBay chuyenBay=danhSach[i].getChuyenBay();
             if(chuyenBay!=null){
-                String maCuaChuyen=chuyenBay.getMaChuyenBay();
+                String maCuaChuyen=chuyenBay.getSoHieuChuyenBay();
                 if(maCuaChuyen!=null&&maCuaChuyen.equalsIgnoreCase(maCanDem)) dem++;
             }
         }
@@ -186,7 +186,7 @@ public class QuanLyVe {
         for(int i=0;i<soLuong;i++){
             HanhKhach hanhKhach=danhSach[i].getHanhKhach();
             if(hanhKhach!=null){
-                String maCuaHanhKhach=hanhKhach.getMaHanhKhach();
+                String maCuaHanhKhach=hanhKhach.getMaSo();
                 if(maCuaHanhKhach!=null&&maCuaHanhKhach.equalsIgnoreCase(maCanDem)) dem++;
             }
         }

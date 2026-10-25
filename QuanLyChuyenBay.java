@@ -10,7 +10,7 @@ public class QuanLyChuyenBay {
         if(chuyenBay==null||soLuong>=danhSach.length){
             return false;
         }
-        String maChuyenBay=chuyenBay.getMaChuyenBay();
+        String maChuyenBay=chuyenBay.getSoHieuChuyenBay();
         if(maChuyenBay==null||maChuyenBay.trim().isEmpty()) return false;
         if(timViTriChuyenBayTheoMa(maChuyenBay)!=-1) return false;
         danhSach[soLuong]=chuyenBay;
@@ -39,7 +39,7 @@ public class QuanLyChuyenBay {
 
         String ma=maCanTim.trim();
         for(int i=0;i<soLuong;i++){
-            String maChuyenBay=danhSach[i].getMaChuyenBay();
+            String maChuyenBay=danhSach[i].getSoHieuChuyenBay();
             if(maChuyenBay!=null&&maChuyenBay.equalsIgnoreCase(ma)){
                 return i;
             }
@@ -56,7 +56,8 @@ public class QuanLyChuyenBay {
         }
 
         for(int i=0;i<soLuong;i++){
-            System.out.println((i+1)+". "+danhSach[i]);
+            System.out.print((i+1)+". ");
+            danhSach[i].hienThiThongTin();
         }
     }
     public ChuyenBay[] timChuyenBayGanDungTheoMa(String tuKhoa){
@@ -69,7 +70,7 @@ public class QuanLyChuyenBay {
         int dem=0;
 
         for(int i=0;i<soLuong;i++){
-            String maChuyenBay=danhSach[i].getMaChuyenBay();
+            String maChuyenBay=danhSach[i].getSoHieuChuyenBay();
             if(maChuyenBay!=null&&maChuyenBay.toUpperCase().contains(khoa)){
                 temp[dem]=danhSach[i];
                 dem++;
@@ -95,8 +96,8 @@ public class QuanLyChuyenBay {
         if(quanLyVe==null||chuyenBayMoi==null) return false;
         int viTri=timViTriChuyenBayTheoMa(maChuyenBay);
         if(viTri==-1) return false;
-        String maMoi=chuyenBayMoi.getMaChuyenBay();
-        if(maMoi==null||!maMoi.equalsIgnoreCase(danhSach[viTri].getMaChuyenBay())) return false;
+        String maMoi=chuyenBayMoi.getSoHieuChuyenBay();
+        if(maMoi==null||!maMoi.equalsIgnoreCase(danhSach[viTri].getSoHieuChuyenBay())) return false;
         if(quanLyVe.demVeTheoMaChuyenBay(maChuyenBay)>0) return false;
         danhSach[viTri]=chuyenBayMoi;
         return true;

@@ -8,7 +8,7 @@ public class QuanLyHanhKhach {
     }
     public boolean themHanhKhach(HanhKhach hanhKhach){
         if(hanhKhach==null||soLuong>=danhSach.length) return false;
-        String maHanhKhach=hanhKhach.getMaHanhKhach();
+        String maHanhKhach=hanhKhach.getMaSo();
         if(maHanhKhach==null||maHanhKhach.trim().isEmpty()) return false;
         if(timViTriHanhKhachTheoMa(maHanhKhach)!=-1) return false;
         danhSach[soLuong]=hanhKhach;
@@ -39,7 +39,7 @@ public class QuanLyHanhKhach {
         }
         String ma=maCanTim.trim();
         for(int i=0;i<soLuong;i++){
-            String maHanhKhach=danhSach[i].getMaHanhKhach();
+            String maHanhKhach=danhSach[i].getMaSo();
             if(maHanhKhach!=null&&maHanhKhach.equalsIgnoreCase(ma)) return i;
         }
         return -1;
@@ -49,7 +49,8 @@ public class QuanLyHanhKhach {
             System.out.println("Danh sach khach hang trong");
         }
         for(int i=0;i<soLuong;i++){
-            System.out.println((i+1)+". "+danhSach[i]);
+            System.out.print((i+1)+". ");
+            danhSach[i].hienThiThongTin();
         }
     }
     public HanhKhach timHanhKhachTheoMa(String maCanTim){

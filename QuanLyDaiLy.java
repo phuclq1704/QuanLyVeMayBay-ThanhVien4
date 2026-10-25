@@ -13,7 +13,7 @@ public class QuanLyDaiLy {
 
         String ma=maCanTim.trim();
         for(int i=0;i<soLuong;i++){
-            String maDaiLy=danhSach[i].getMaDaiLy();
+            String maDaiLy=danhSach[i].getMaSo();
             if(maDaiLy!=null&&maDaiLy.equalsIgnoreCase(ma)){
                 return i;
             }
@@ -25,7 +25,7 @@ public class QuanLyDaiLy {
             return false;
         }
 
-        String maDaiLy=daiLy.getMaDaiLy();
+        String maDaiLy=daiLy.getMaSo();
         if(maDaiLy==null||maDaiLy.trim().isEmpty()){
             return false;
         }
@@ -59,7 +59,8 @@ public class QuanLyDaiLy {
             return;
         }
         for(int i=0;i<soLuong;i++){
-            System.out.println((i+1)+". "+danhSach[i]);
+            System.out.print((i+1)+". ");
+            danhSach[i].hienThiThongTin();
         }
     }
     public DaiLy timDaiLyTheoMa(String maCanTim){
@@ -85,7 +86,7 @@ public class QuanLyDaiLy {
         DaiLy[] temp=new DaiLy[soLuong];
         int dem=0;
         for(int i=0;i<soLuong;i++){
-            String maDaiLy=danhSach[i].getMaDaiLy();
+            String maDaiLy=danhSach[i].getMaSo();
             if(maDaiLy!=null&&maDaiLy.toUpperCase().contains(khoa)){
                 temp[dem]=danhSach[i];
                 dem++;
@@ -107,7 +108,7 @@ public class QuanLyDaiLy {
         DaiLy[] temp=new DaiLy[soLuong];
         int dem=0;
         for(int i=0;i<soLuong;i++){
-            String tenDaiLy=danhSach[i].getTenDaiLy();
+            String tenDaiLy=danhSach[i].getHoTen();
             if(tenDaiLy!=null&&tenDaiLy.toUpperCase().contains(khoa)){
                 temp[dem]=danhSach[i];
                 dem++;
@@ -128,7 +129,7 @@ public class QuanLyDaiLy {
         if(hoTenMoi==null||hoTenMoi.trim().isEmpty()) return  false;
         DaiLy daiLy=timDaiLyTheoMa(maDaiLy);
         if(daiLy==null) return false;
-        daiLy.setTenDaiLy(hoTenMoi.trim());
+        daiLy.setHoTen(hoTenMoi.trim());
         return true;
     }
 }
