@@ -1,0 +1,7 @@
+Các chức năng thành viên 5 đã làm:
+- Tạo dữ liệu demo gồm 10 chuyến bay, 20 hành khách và 3 đại lý.
+- Ghi mảng vé ra tệp bằng ghiVe(VeMayBay[] dsVe, int n).
+- Đọc danh sách vé từ tệp bằng docVe(), trả về VeMayBay[].
+- Ghi mảng đơn đặt vé ra tệp bằng ghiDonDat(DonDatVe[] dsDonDat, int n).
+- Đọc danh sách đơn đặt từ tệp bằng docDonDat(), trả về DonDatVe[].
+- Lưu dữ liệu trong thư mục data, tại ve_mang.txt và dondat_mang.txt.
