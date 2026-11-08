@@ -1,4 +1,5 @@
 public class ThanhToanThe implements IThanhToan {
+    private static final long serialVersionUID = 1L;
     private String soThe;
 
     public ThanhToanThe(String soThe) {

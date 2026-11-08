@@ -53,6 +53,11 @@ public class QuanLyDaiLy {
     public int getSoLuong(){
         return soLuong;
     }
+    public DaiLy[] getDanhSach(){
+        DaiLy[] ketQua = new DaiLy[soLuong];
+        System.arraycopy(danhSach, 0, ketQua, 0, soLuong);
+        return ketQua;
+    }
     public void xuatDanhSach(){
         if(soLuong==0){
             System.out.println("Danh sach dai ly trong");

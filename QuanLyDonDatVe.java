@@ -105,6 +105,8 @@ public class QuanLyDonDatVe {
         VeMayBay ve = loaiVe == 1
                 ? new VePhoThong(maVeSach, giaGoc, phuPhi)
                 : new VeThuongGia(maVeSach, giaGoc, phuPhi);
+        ve.setChuyenBay(chuyenBay);
+        ve.setHanhKhach(hanhKhach);
         double tongTien = ve.tinhGiaVe();
         if (!Double.isFinite(tongTien) || tongTien <= 0) {
             return loi("Tổng tiền vé không hợp lệ.");
@@ -330,7 +332,20 @@ public class QuanLyDonDatVe {
             danhSachDon = danhSachMoi;
         }
         danhSachDon[soLuongDon++] = don;
+        capNhatMaTiepTheo(don.getMaDonDat(), "DD", true);
+        capNhatMaTiepTheo(don.getVe().getMaVe(), "VE", false);
         return true;
+    }
+
+    private void capNhatMaTiepTheo(String ma, String tienTo, boolean laMaDon) {
+        if (ma == null || !ma.toUpperCase().startsWith(tienTo)) return;
+        try {
+            int so = Integer.parseInt(ma.substring(tienTo.length()));
+            if (laMaDon) soDonTiepTheo = Math.max(soDonTiepTheo, so + 1);
+            else soVeTiepTheo = Math.max(soVeTiepTheo, so + 1);
+        } catch (NumberFormatException ignored) {
+            // Mã tự đặt không theo dạng DD0001/VE0001 không ảnh hưởng bộ đếm.
+        }
     }
 
     private int timViTriDonTheoMa(String maDonDat) {

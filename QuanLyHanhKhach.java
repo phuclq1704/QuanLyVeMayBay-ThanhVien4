@@ -18,6 +18,11 @@ public class QuanLyHanhKhach {
     public int getSoLuong(){
         return soLuong;
     }
+    public HanhKhach[] getDanhSach(){
+        HanhKhach[] ketQua = new HanhKhach[soLuong];
+        System.arraycopy(danhSach, 0, ketQua, 0, soLuong);
+        return ketQua;
+    }
     private boolean xoaHanhKhachTaiViTri(int viTri){
         if(viTri<0||viTri>=soLuong) return false;
         for(int i=viTri;i<soLuong-1;i++){
@@ -100,6 +105,17 @@ public class QuanLyHanhKhach {
         HanhKhach hanhKhach=timHanhKhachTheoMa(maHanhKhach);
         if(hanhKhach==null) return false;
         hanhKhach.setHoTen(hoTenMoi.trim());
+        return true;
+    }
+    public boolean suaThongTinHanhKhach(String maHanhKhach, String hoTen,
+                                        String soDienThoai, String hoChieu){
+        HanhKhach hanhKhach = timHanhKhachTheoMa(maHanhKhach);
+        if (hanhKhach == null || hoTen == null || hoTen.trim().isEmpty()
+                || soDienThoai == null || soDienThoai.trim().isEmpty()
+                || hoChieu == null || hoChieu.trim().isEmpty()) return false;
+        hanhKhach.setHoTen(hoTen.trim());
+        hanhKhach.setSoDienThoai(soDienThoai.trim());
+        hanhKhach.setHochieu(hoChieu.trim());
         return true;
     }
 }

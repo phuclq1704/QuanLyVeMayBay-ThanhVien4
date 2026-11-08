@@ -1,8 +1,10 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.io.Serializable;
 
 /** Đơn đặt vé; các thuộc tính chính bám theo sơ đồ lớp của đồ án. */
-public class DonDatVe {
+public class DonDatVe implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String maDonDat;
     private Nguoi nguoiDat;
     private HanhKhach hanhKhach;

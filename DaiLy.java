@@ -1,4 +1,5 @@
 public class DaiLy extends Nguoi {
+    private static final long serialVersionUID = 1L;
     private String loaiDaiLy;
     private Double duNo;
     public DaiLy() {
@@ -10,6 +11,10 @@ public class DaiLy extends Nguoi {
         super(status, maSo, hoTen, soDienThoai);
         this.loaiDaiLy = loaiDaiLy;
         this.duNo = duNo;
+    }
+    public DaiLy(String maSo, String hoTen, String soDienThoai,
+                 String loaiDaiLy, double duNo) {
+        this(true, maSo, hoTen, soDienThoai, loaiDaiLy, duNo);
     }
       /**
      *  soTien > 0 : đại lý lấy vé / phát sinh nợ  -> duNo tăng

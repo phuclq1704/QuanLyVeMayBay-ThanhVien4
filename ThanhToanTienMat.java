@@ -1,4 +1,5 @@
 public class ThanhToanTienMat implements IThanhToan {
+    private static final long serialVersionUID = 1L;
     private double tienKhachDua;
 
     public ThanhToanTienMat(double tienKhachDua) {

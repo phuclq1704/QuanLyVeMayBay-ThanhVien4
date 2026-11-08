@@ -1,4 +1,5 @@
 public class NhanVien extends Nguoi {
+    private static final long serialVersionUID = 1L;
     private String maNhanVien;
     private String MK;
     public NhanVien() {
@@ -10,6 +11,10 @@ public class NhanVien extends Nguoi {
         super(status, maSo, hoTen, soDienThoai);
         this.maNhanVien = maNhanVien;
         this.MK = MK;
+    }
+    public NhanVien(String maSo, String maNhanVien, String hoTen,
+                    String soDienThoai, String matKhau) {
+        this(true, maSo, hoTen, soDienThoai, maNhanVien, matKhau);
     }
     @Override
     public void hienThiThongTin() {

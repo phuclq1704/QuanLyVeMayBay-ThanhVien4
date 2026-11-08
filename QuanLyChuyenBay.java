@@ -49,6 +49,11 @@ public class QuanLyChuyenBay {
     public int getSoLuong(){
         return soLuong;
     }
+    public ChuyenBay[] getDanhSach(){
+        ChuyenBay[] ketQua = new ChuyenBay[soLuong];
+        System.arraycopy(danhSach, 0, ketQua, 0, soLuong);
+        return ketQua;
+    }
     public void xuatDanhSach(){
         if(soLuong==0){
             System.out.println("Danh sach chuyen bay trong");

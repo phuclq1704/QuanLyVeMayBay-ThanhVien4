@@ -1,4 +1,5 @@
 public class VePhoThong extends VeMayBay {
+    private static final long serialVersionUID = 1L;
     private double phiHanhLy;
 
     public VePhoThong(String maVe, double giaGoc,
@@ -17,6 +18,6 @@ public class VePhoThong extends VeMayBay {
 
     @Override
     public double tinhGiaVe() {
-        return (getGiaGoc() + phiHanhLy) * 1.08;
+        return (getGiaGoc() + phiHanhLy) * (1 + THUE_VAT);
     }
 }

@@ -1,4 +1,7 @@
-public class ChuyenBay {
+import java.io.Serializable;
+
+public class ChuyenBay implements Serializable {
+    private static final long serialVersionUID = 1L;
     private boolean status = true;  
     private String soHieuCHuyenBay;
     private String DiemDi, DiemDen;
@@ -24,6 +27,15 @@ public class ChuyenBay {
         this.NgayDen = NgayDen;
         this.tongSoGhe = tongSoGhe;
         this.soGheTrong = soGheTrong;
+    }
+
+    /** Constructor tiện dụng dùng ngày trong lớp NgayThang. */
+    public ChuyenBay(String maChuyenBay, String diemDi, String diemDen,
+                     int tongSoGhe, NgayThang ngayDi) {
+        this(true, maChuyenBay, diemDi, diemDen,
+                ngayDi == null ? "" : ngayDi.toString(),
+                ngayDi == null ? "" : ngayDi.toString(),
+                tongSoGhe, tongSoGhe);
     }
 
     public boolean DatGhe () {
@@ -59,8 +71,15 @@ public class ChuyenBay {
     public String getSoHieuCHuyenBay() {
         return soHieuCHuyenBay;
     }
+    /** Alias viết đúng chuẩn camelCase; giữ getter cũ để tương thích code nhóm. */
+    public String getSoHieuChuyenBay() {
+        return soHieuCHuyenBay;
+    }
     public void setSoHieuCHuyenBay(String soHieuCHuyenBay) {
         this.soHieuCHuyenBay = soHieuCHuyenBay;
+    }
+    public void setSoHieuChuyenBay(String soHieuChuyenBay) {
+        this.soHieuCHuyenBay = soHieuChuyenBay;
     }
     public String getDiemDi() {
         return DiemDi;

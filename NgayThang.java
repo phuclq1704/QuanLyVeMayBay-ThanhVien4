@@ -1,4 +1,8 @@
-public class NgayThang {
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class NgayThang implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int ngay, thang, nam;
     private boolean status = true;
 
@@ -12,6 +16,10 @@ public class NgayThang {
         this.ngay = ngay;
         this.thang = thang;
         this.nam = nam;
+    }
+
+    public NgayThang(LocalDate ngay) {
+        this(ngay.getDayOfMonth(), ngay.getMonthValue(), ngay.getYear());
     }
 
     // tránh 2 biến trỏ cùng 1 ngày

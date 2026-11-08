@@ -31,6 +31,23 @@ public class QuanLyVe {
     public int getSoLuong(){
         return soLuong;
     }
+    public VeMayBay[] getDanhSach(){
+        VeMayBay[] ketQua = new VeMayBay[soLuong];
+        System.arraycopy(danhSach, 0, ketQua, 0, soLuong);
+        return ketQua;
+    }
+
+    public boolean isDaHuy(String maVe){
+        int viTri = timViTriVeTheoMa(maVe);
+        return viTri >= 0 && daHuy[viTri];
+    }
+
+    public boolean capNhatTrangThaiHuy(String maVe, boolean trangThaiHuy){
+        int viTri = timViTriVeTheoMa(maVe);
+        if (viTri < 0) return false;
+        daHuy[viTri] = trangThaiHuy;
+        return true;
+    }
     public boolean xoaVeTaiViTri(int viTri){
         if(viTri<0||viTri>=soLuong) return false;
         for(int i=viTri;i<soLuong-1;i++){

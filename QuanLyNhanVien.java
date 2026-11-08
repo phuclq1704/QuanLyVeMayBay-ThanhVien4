@@ -31,9 +31,34 @@ public class QuanLyNhanVien {
         if (layma(maNhanVien) != null) {
             return false;
         }
-        nv.setStatus(true);
         danhsach[soluong] = nv;
         soluong++;
+        return true;
+    }
+
+    /** Tên phương thức chuẩn; giữ themNhanVIen để tương thích mã cũ. */
+    public boolean themNhanVien(NhanVien nv) {
+        return themNhanVIen(nv);
+    }
+
+    public int getSoLuong() {
+        return soluong;
+    }
+
+    public NhanVien[] getDanhSach() {
+        NhanVien[] ketQua = new NhanVien[soluong];
+        System.arraycopy(danhsach, 0, ketQua, 0, soluong);
+        return ketQua;
+    }
+
+    public boolean suaNhanVien(String maNV, String hoTen, String soDienThoai, String matKhau) {
+        NhanVien nv = timNhanVien(maNV);
+        if (nv == null || hoTen == null || hoTen.trim().isEmpty()
+                || soDienThoai == null || soDienThoai.trim().isEmpty()
+                || matKhau == null || matKhau.trim().isEmpty()) return false;
+        nv.setHoTen(hoTen.trim());
+        nv.setSoDienThoai(soDienThoai.trim());
+        nv.setMK(matKhau.trim());
         return true;
     }
     public boolean xoaNhanVien(String maNV) {

@@ -1,4 +1,5 @@
 public class HanhKhach extends Nguoi {
+    private static final long serialVersionUID = 1L;
     private String Hochieu;
     public HanhKhach() {
         super(); 
@@ -7,6 +8,12 @@ public class HanhKhach extends Nguoi {
     public HanhKhach(boolean status, String maSo, String hoTen, String soDienThoai, String Hochieu) {
         super(status, maSo, hoTen, soDienThoai);
         this.Hochieu = Hochieu;
+    }
+    public HanhKhach(String maSo, String hoTen, String soDienThoai, String hoChieu) {
+        this(true, maSo, hoTen, soDienThoai, hoChieu);
+    }
+    public String getMaHanhKhach() {
+        return getMaSo();
     }
     @Override
     public void hienThiThongTin() {
