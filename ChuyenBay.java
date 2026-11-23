@@ -71,7 +71,6 @@ public class ChuyenBay implements Serializable {
     public String getSoHieuCHuyenBay() {
         return soHieuCHuyenBay;
     }
-    /** Alias viết đúng chuẩn camelCase; giữ getter cũ để tương thích code nhóm. */
     public String getSoHieuChuyenBay() {
         return soHieuCHuyenBay;
     }
