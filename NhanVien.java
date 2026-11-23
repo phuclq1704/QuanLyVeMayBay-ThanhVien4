@@ -22,10 +22,10 @@ public class NhanVien extends Nguoi {
                 + " |[Nhân viên] Mã số: " + maSo + " | Họ tên: " + hoTen
                 + " | SĐT: " + soDienThoai + " | Mã nhân viên: " + maNhanVien + " | Mã khóa: " + MK);
     }
-    public String getMaNhanVien() {
+    public String getmaNhanVien() {
         return maNhanVien;
     }
-    public void setMaNhanVien(String maNhanVien) {
+    public void setmaNhanVien(String maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
     public String getMK() {
