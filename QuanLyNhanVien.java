@@ -13,7 +13,7 @@ public class QuanLyNhanVien {
         }
         String ma = maNV.trim();
         for (int i = 0; i < soluong; i++) {
-            if (danhsach[i].getMaNhanVien().equalsIgnoreCase(ma)) {
+            if (danhsach[i].getmaNhanVien().equalsIgnoreCase(ma)) {
                 return danhsach[i];
             }
         }
@@ -24,7 +24,7 @@ public class QuanLyNhanVien {
         if (nv == null || soluong >= danhsach.length) {
             return false;
         }
-        String maNhanVien = nv.getMaNhanVien();
+        String maNhanVien = nv.getmaNhanVien();
         if (maNhanVien == null || maNhanVien.trim().isEmpty()) {
             return false;
         }
